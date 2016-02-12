@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+        <title>ESP8266 LED controller</title>
+
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h3>LED status: <span id='status'></span></h3>
+        <button id='toggleBtn'>Toggle</button>
+
+        <script>
+            // A function for making an AJAX request. The response is given
+            // to the callback as a parameter.
+            function makeRequest(action, callback) {
+                var req = new XMLHttpRequest();
+                // Add a unique GET parameter to prevent caching
+                req.open('GET', '/' + action + '?' + Date.now());
+                // Attach the callback if given
+                if (callback !== undefined) {
+                    req.onreadystatechange = function() {
+                        if (req.status === 200) callback(req.responseText);
+                    };
+                }
+                req.send(null);
+            }
+
+            var statusSpan = document.getElementById('status');
+            function updateStatus(status) {
+                statusSpan.textContent = status;
+            }
+
+            document.getElementById('toggleBtn').addEventListener('click',
+                function() {
+                makeRequest('toggle', updateStatus);
+            });
+
+            makeRequest('status', updateStatus);
+        </script>
+    </body>
+</html>
