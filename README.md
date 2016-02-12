@@ -5,6 +5,7 @@ This is based on programming the ESP8266 with the Arduino IDE.
 ## What?
 The Arduino sketch lets you control a LED attached to your ESP8266 board via
 WiFi and a HTML user interface.
+![A screenshot of the UI in a mobile browser](assets/screenshot.png)
 
 ## How to use this?
 These files are meant to be used with the Arduino IDE and the [ESP8266 core](https://github.com/esp8266/Arduino).
