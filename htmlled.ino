@@ -3,7 +3,7 @@
 #include "FS.h"
 
 // Access point credentials
-const char *ssid = "ESPap",
+const char *ssid = "HtmlLED",
            *password = "123456789";
 
 ESP8266WebServer server(80);
