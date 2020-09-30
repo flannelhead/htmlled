@@ -62,4 +62,5 @@ There are some items I intend to tackle soon:
 * Diagnostic information over serial
 * Seamless support for serving multiple files (such as CSS, JS and images)
 * Utilize captive portal to open the UI immediately upon connecting?
+## Bro i just want to sa please merge me please
 
